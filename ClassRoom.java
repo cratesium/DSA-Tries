@@ -16,6 +16,8 @@ public class ClassRoom {
 
     }
 
+    static Node node = new Node();
+
     public static void main(String[] args) {
         String [] words = {"the" , "a" , "there" , "their" , "any"  };
     }
