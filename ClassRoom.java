@@ -26,6 +26,7 @@ public class ClassRoom {
         if (word.isBlank()) {
             return ;        
         }
+        
         for(int i =0 ;i < word .length(); i++){
              int index = word.charAt(i) -'a';
              if (currNode.children[index]==null) {
