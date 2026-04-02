@@ -48,6 +48,19 @@ public class ClassRoom {
 
 
     }
+
+       // INSERT
+    public void insertv2(String word) {
+        Node curr = root;
+        for (int i = 0; i < word.length(); i++) {
+            int idx = word.charAt(i) - 'a';
+            if (curr.children[idx] == null)
+                curr.children[idx] = new Node();
+            curr = curr.children[idx];
+        }
+        curr.isEndOfWord = true;
+    }
+    
    // STARTS WITH
     public boolean startsWith(String prefix) {
         Node curr = root;
