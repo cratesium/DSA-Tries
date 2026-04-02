@@ -119,6 +119,25 @@ public class ClassRoom {
                 printHelper(curr.children[i], word + (char)('a' + i));
         }
     }
+
+     public static void main(String[] args) {
+        String[] words = {"the", "a", "there", "their", "any"};
+        ClassRoom trie = new ClassRoom();
+
+        for (String w : words)
+            trie.insert(w);
+
+        trie.printAll();
+
+        System.out.println(trie.search("the"));    // true
+        System.out.println(trie.search("them"));   // false
+        System.out.println(trie.startsWith("th")); // true
+
+        trie.delete("their");
+        System.out.println(trie.search("their"));  // false
+        System.out.println(trie.search("there"));  // true
+    }
+    
     
 
     public static void main(String[] args) {
