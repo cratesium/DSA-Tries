@@ -106,6 +106,21 @@ public class ClassRoom {
         return canDelete && !curr.isEndOfWord;
     }
 
+       // PRINT all WORDS
+    public void printAll() {
+        printHelper(root, "");
+    }
+
+    private void printHelper(Node curr, String word) {
+        if (curr.isEndOfWord)
+            System.out.println(word);
+        for (int i = 0; i < 26; i++) {
+            if (curr.children[i] != null)
+                printHelper(curr.children[i], word + (char)('a' + i));
+        }
+    }
+    
+
     public static void main(String[] args) {
         String [] words = {"the" , "a" , "there" , "their" , "any"  };
     }
