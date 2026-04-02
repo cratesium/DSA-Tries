@@ -153,8 +153,6 @@ public class ClassRoom {
     
     
 
-    public static void main(String[] args) {
-        String [] words = {"the" , "a" , "there" , "their" , "any"  };
-    }
+
     
 }
