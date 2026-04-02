@@ -48,6 +48,19 @@ public class ClassRoom {
 
 
     }
+   // STARTS WITH
+    public boolean startsWith(String prefix) {
+        Node curr = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            int idx = prefix.charAt(i) - 'a';
+            if (curr.children[idx] == null)
+                return false;
+            curr = curr.children[idx];
+        }
+        return true;
+    }
+    
+    
        // SEARCH
     public boolean search(String word) {
         Node curr = root;
