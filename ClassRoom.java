@@ -86,6 +86,26 @@ public class ClassRoom {
         curr.isEndOfWord = true;
     }
 
+        // DELETE
+    public void delete(String word) {
+        deleteHelper(root, word, 0);
+    }
+
+    private boolean deleteHelper(Node curr, String word, int depth) {
+        if (depth == word.length()) {
+            if (!curr.isEndOfWord) return false;
+            curr.isEndOfWord = false;
+            for (Node child : curr.children)
+                if (child != null) return false;
+            return true;
+        }
+        int idx = word.charAt(depth) - 'a';
+        if (curr.children[idx] == null) return false;
+        boolean canDelete = deleteHelper(curr.children[idx], word, depth + 1);
+        if (canDelete) curr.children[idx] = null;
+        return canDelete && !curr.isEndOfWord;
+    }
+
     public static void main(String[] args) {
         String [] words = {"the" , "a" , "there" , "their" , "any"  };
     }
