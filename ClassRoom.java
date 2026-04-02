@@ -48,6 +48,18 @@ public class ClassRoom {
 
 
     }
+    
+        // INSERT
+    public void insert(String word) {
+        Node curr = root;
+        for (int i = 0; i < word.length(); i++) {
+            int idx = word.charAt(i) - 'a';
+            if (curr.children[idx] == null)
+                curr.children[idx] = new Node();
+            curr = curr.children[idx];
+        }
+        curr.isEndOfWord = true;
+    }
 
     public static void main(String[] args) {
         String [] words = {"the" , "a" , "there" , "their" , "any"  };
